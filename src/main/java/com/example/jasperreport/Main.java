@@ -19,9 +19,9 @@ public class Main {
         List<KitInfoModel> kitList = new ArrayList<>();
         List<SterilizerInfoModel> sertilizerList = new ArrayList<>();
         List<KitUsageModel> kitUsageList = new ArrayList<>();
-        CustomerDetailsModel cdm= new CustomerDetailsModel("123","9709759387","12345667890");
+        CustomerDetailsModel cdm= new CustomerDetailsModel("12345","9709759387-","12345667890-");
 
-        for (int i = 0; i < 4; i++) {
+    /*    for (int i = 0; i < 4; i++) {
             sertilizerList.add(new SterilizerInfoModel("brand"+i,"strem-"+i,"123456789123"+i));
         }
         for (int i = 0; i < 4; i++) {
@@ -29,7 +29,7 @@ public class Main {
         }
         for (int i = 0; i <2000; i++) {
             kitUsageList.add(new KitUsageModel("12345678"+i,"10/10/200","PASS+"));
-        }
+        }*/
 
         JRBeanCollectionDataSource kitListJrBean = new JRBeanCollectionDataSource(kitList);
         JRBeanCollectionDataSource sterilizerListJrBean = new JRBeanCollectionDataSource(sertilizerList);
@@ -50,7 +50,6 @@ public class Main {
 
         JasperReport jasperReport = JasperCompileManager.compileReport( Main.class.getResourceAsStream("sns_report.jrxml"));
         JasperPrint print = JasperFillManager.fillReport(jasperReport, param, customerJrBean);
-        JasperExportManager.exportReportToPdfFile(print,"C:\\Users\\ASUS\\Desktop\\test.pdf");
         JasperViewer jv = new JasperViewer(print);
         jv.show();
     }
