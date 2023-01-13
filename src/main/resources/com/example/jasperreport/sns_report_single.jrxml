@@ -275,7 +275,7 @@
 									<box>
 										<leftPen lineWidth="1.0"/>
 										<bottomPen lineWidth="1.0"/>
-										<rightPen lineWidth="1.0"/>
+										<rightPen lineWidth="0.0"/>
 									</box>
 									<textElement textAlignment="Center" verticalAlignment="Middle">
 										<font size="8" isBold="true"/>
@@ -293,7 +293,7 @@
 									</reportElement>
 									<box>
 										<leftPen lineWidth="1.0"/>
-										<rightPen lineWidth="1.0"/>
+										<rightPen lineWidth="0.0"/>
 									</box>
 									<textElement textAlignment="Center" verticalAlignment="Middle">
 										<font size="8"/>
@@ -381,7 +381,7 @@
 						<jr:tableFooter style="Table_TH" height="1" rowSpan="1">
 							<property name="com.jaspersoft.studio.unit.height" value="px"/>
 							<box>
-								<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 								<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 								<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 								<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -392,10 +392,10 @@
 							<jr:tableFooter height="1" rowSpan="1">
 								<property name="com.jaspersoft.studio.unit.height" value="px"/>
 								<box>
-									<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
-									<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
-									<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
-									<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 								</box>
 							</jr:tableFooter>
 							<jr:columnHeader height="13" rowSpan="1">
@@ -410,7 +410,7 @@
 										<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 										<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 										<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
-										<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+										<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 									</box>
 									<textElement textAlignment="Center" verticalAlignment="Middle">
 										<font size="8" isBold="true"/>
@@ -427,7 +427,7 @@
 									</reportElement>
 									<box>
 										<leftPen lineWidth="1.0"/>
-										<rightPen lineWidth="1.0"/>
+										<rightPen lineWidth="0.0"/>
 									</box>
 									<textElement textAlignment="Center" verticalAlignment="Middle">
 										<font size="10"/>
@@ -442,10 +442,10 @@
 							<jr:tableFooter height="1" rowSpan="1">
 								<property name="com.jaspersoft.studio.unit.height" value="px"/>
 								<box>
-									<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
-									<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
-									<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
-									<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 								</box>
 							</jr:tableFooter>
 							<jr:columnHeader height="13" rowSpan="1">
@@ -456,9 +456,9 @@
 									<reportElement x="0" y="0" width="140" height="13" uuid="b06eb217-cd97-4ee4-bf8a-e4b019f2fd1d"/>
 									<box>
 										<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
-										<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+										<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 										<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
-										<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+										<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 									</box>
 									<textElement textAlignment="Center" verticalAlignment="Middle">
 										<font size="8" isBold="true"/>
@@ -474,7 +474,7 @@
 										<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
 									</reportElement>
 									<box>
-										<rightPen lineWidth="1.0"/>
+										<rightPen lineWidth="0.0"/>
 									</box>
 									<textElement textAlignment="Center" verticalAlignment="Middle">
 										<font size="10"/>
@@ -489,10 +489,10 @@
 							<jr:tableFooter height="1" rowSpan="1">
 								<property name="com.jaspersoft.studio.unit.height" value="px"/>
 								<box>
-									<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
-									<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
-									<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
-									<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 								</box>
 							</jr:tableFooter>
 							<jr:columnHeader height="13">
@@ -505,7 +505,7 @@
 									<reportElement x="0" y="0" width="81" height="13" uuid="ed9c3a42-8c5e-4998-b625-667942729ce4"/>
 									<box>
 										<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
-										<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+										<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 										<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 										<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 									</box>
@@ -824,7 +824,7 @@
 										<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 									</box>
 									<textElement textAlignment="Center" verticalAlignment="Middle">
-										<font size="7"/>
+										<font size="8"/>
 										<paragraph leftIndent="5" rightIndent="5"/>
 									</textElement>
 									<textFieldExpression><![CDATA[$F{dateOfTest}]]></textFieldExpression>
@@ -853,7 +853,7 @@
 										<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 									</box>
 									<textElement textAlignment="Center" verticalAlignment="Middle">
-										<font size="7"/>
+										<font size="8"/>
 										<paragraph leftIndent="5" rightIndent="5"/>
 									</textElement>
 									<textFieldExpression><![CDATA[$F{result}]]></textFieldExpression>
