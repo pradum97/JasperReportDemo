@@ -1,37 +1,39 @@
 package com.example.jasperreport.model;
 
-public class KitUsageModel {
-    private String kitNumber;
-    private String dateOfTest;
-    private String result;
+import java.util.Date;
 
-    public KitUsageModel(String kitNumber, String dateOfTest, String result) {
+public class KitUsageModel {
+    private long kitNumber;
+    private Date testDate;
+    private String testResult;
+
+    public KitUsageModel(long kitNumber, Date testDate, String testResult) {
         this.kitNumber = kitNumber;
-        this.dateOfTest = dateOfTest;
-        this.result = result;
+        this.testDate = testDate;
+        this.testResult = testResult;
     }
 
-    public String getKitNumber() {
+    public long getKitNumber() {
         return kitNumber;
     }
 
-    public void setKitNumber(String kitNumber) {
+    public void setKitNumber(long kitNumber) {
         this.kitNumber = kitNumber;
     }
 
-    public String getDateOfTest() {
-        return dateOfTest;
+    public Date getTestDate() {
+        return testDate;
     }
 
-    public void setDateOfTest(String dateOfTest) {
-        this.dateOfTest = dateOfTest;
+    public void setTestDate(Date testDate) {
+        this.testDate = testDate;
     }
 
-    public String getResult() {
-        return result;
+    public String getTestResult() {
+        return testResult;
     }
 
-    public void setResult(String result) {
-        this.result = result;
+    public void setTestResult(String testResult) {
+        this.testResult = testResult;
     }
 }

@@ -2,21 +2,31 @@ package com.example.jasperreport.model;
 
 public class CustomerDetailsModel {
 
-  private String customerId;
+  private long customerId;
   private String phoneNumber;
   private String faxNumber;
+  private String doctorDetails;
 
-    public CustomerDetailsModel(String customerId, String phoneNumber, String faxNumber) {
+    public CustomerDetailsModel(long customerId, String phoneNumber, String faxNumber, String doctorDetails) {
         this.customerId = customerId;
         this.phoneNumber = phoneNumber;
         this.faxNumber = faxNumber;
+        this.doctorDetails = doctorDetails;
     }
 
-    public String getCustomerId() {
+    public String getDoctorDetails() {
+        return doctorDetails;
+    }
+
+    public void setDoctorDetails(String doctorDetails) {
+        this.doctorDetails = doctorDetails;
+    }
+
+    public long getCustomerId() {
         return customerId;
     }
 
-    public void setCustomerId(String customerId) {
+    public void setCustomerId(long customerId) {
         this.customerId = customerId;
     }
 

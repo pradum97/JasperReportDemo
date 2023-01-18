@@ -1,27 +1,30 @@
 package com.example.jasperreport.model;
 
+import java.util.Date;
+
 public class KitInfoModel {
-    private String kitNumber;
-    private String expiryDate;
+    private long kitNumber;
+    private Date expiryDate;
 
 
-    public KitInfoModel(String kitNumber, String expiryDate) {
+    public KitInfoModel(long kitNumber, Date expiryDate) {
         this.kitNumber = kitNumber;
         this.expiryDate = expiryDate;
     }
 
-    public String getKitNumber() {
+    public long getKitNumber() {
         return kitNumber;
     }
 
-    public void setKitNumber(String kitNumber) {
+    public void setKitNumber(long kitNumber) {
         this.kitNumber = kitNumber;
     }
 
-    public String getExpiryDate() {
+    public Date getExpiryDate() {
         return expiryDate;
     }
-    public void setExpiryDate(String expiryDate) {
+
+    public void setExpiryDate(Date expiryDate) {
         this.expiryDate = expiryDate;
     }
 }

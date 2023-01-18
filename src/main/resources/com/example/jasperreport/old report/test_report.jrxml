@@ -44,8 +44,8 @@
 		<queryString>
 			<![CDATA[]]>
 		</queryString>
-		<field name="kitNumber" class="java.lang.String"/>
-		<field name="expiryDate" class="java.lang.String"/>
+		<field name="kitNumber" class="java.lang.Long"/>
+		<field name="expiryDate" class="java.util.Date"/>
 	</subDataset>
 	<subDataset name="SterilizerDetaSet" uuid="6464513e-81b8-4c8f-b0a9-b739d3330109">
 		<queryString>
@@ -59,21 +59,21 @@
 		<queryString>
 			<![CDATA[]]>
 		</queryString>
-		<field name="kitNumber" class="java.lang.String"/>
-		<field name="dateOfTest" class="java.lang.String"/>
-		<field name="result" class="java.lang.String"/>
+		<field name="kitNumber" class="java.lang.Long"/>
+		<field name="testDate" class="java.util.Date"/>
+		<field name="testResult" class="java.lang.String"/>
 	</subDataset>
-	<parameter name="KitInfoList" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource" isForPrompting="false"/>
-	<parameter name="sterilizerInfoList" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource" isForPrompting="false"/>
+	<parameter name="kits" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource" isForPrompting="false"/>
+	<parameter name="sterilizers" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource" isForPrompting="false"/>
 	<parameter name="kitUsage" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource" isForPrompting="false"/>
-	<parameter name="doctorFullAddress" class="java.lang.String" isForPrompting="false"/>
 	<parameter name="watermarkImg" class="java.io.InputStream" isForPrompting="false"/>
 	<queryString>
 		<![CDATA[]]>
 	</queryString>
 	<field name="faxNumber" class="java.lang.String"/>
 	<field name="phoneNumber" class="java.lang.String"/>
-	<field name="customerId" class="java.lang.String"/>
+	<field name="customerId" class="java.lang.Long"/>
+	<field name="doctorDetails" class="java.lang.String"/>
 	<background>
 		<band height="802">
 			<property name="com.jaspersoft.studio.unit.height" value="px"/>
@@ -221,7 +221,7 @@
 						<font size="10"/>
 						<paragraph firstLineIndent="0" leftIndent="5" rightIndent="5"/>
 					</textElement>
-					<textFieldExpression><![CDATA[$P{doctorFullAddress}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{doctorDetails}]]></textFieldExpression>
 				</textField>
 			</frame>
 			<componentElement>
@@ -233,7 +233,7 @@
 				</reportElement>
 				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
 					<datasetRun subDataset="kitDataSet" uuid="bf09b261-061e-4331-ba72-1a01760a8443">
-						<dataSourceExpression><![CDATA[$P{KitInfoList}]]></dataSourceExpression>
+						<dataSourceExpression><![CDATA[$P{kits}]]></dataSourceExpression>
 					</datasetRun>
 					<jr:columnGroup width="220" uuid="5b0c161d-5aaf-4e11-9ac8-69c07105e41c">
 						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Columns [2]"/>
@@ -358,7 +358,7 @@
 				</reportElement>
 				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
 					<datasetRun subDataset="SterilizerDetaSet" uuid="fdd1e5e1-e47f-4555-a1ec-3caa4429979e">
-						<dataSourceExpression><![CDATA[$P{sterilizerInfoList}]]></dataSourceExpression>
+						<dataSourceExpression><![CDATA[$P{sterilizers}]]></dataSourceExpression>
 					</datasetRun>
 					<jr:columnGroup width="321" uuid="768fe390-bbb5-41f5-b25f-393db5c3608e">
 						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Columns [3]"/>
@@ -474,7 +474,6 @@
 										<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
 									</reportElement>
 									<box>
-										<leftPen lineWidth="0.0"/>
 										<rightPen lineWidth="0.0"/>
 									</box>
 									<textElement textAlignment="Center" verticalAlignment="Middle">
@@ -524,7 +523,6 @@
 										<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
 									</reportElement>
 									<box>
-										<leftPen lineWidth="0.0"/>
 										<rightPen lineWidth="1.0"/>
 									</box>
 									<textElement textAlignment="Center" verticalAlignment="Middle">
@@ -692,26 +690,11 @@
 					<bottomPen lineWidth="1.0"/>
 				</box>
 				<frame>
-					<reportElement stretchType="ContainerHeight" x="0" y="0" width="183" height="15" uuid="649a7fa2-ab44-4189-896b-366218d63c52">
+					<reportElement stretchType="ContainerHeight" x="12" y="0" width="141" height="15" uuid="649a7fa2-ab44-4189-896b-366218d63c52">
 						<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					</reportElement>
 					<staticText>
-						<reportElement x="0" y="0" width="55" height="15" uuid="3742b604-8e55-4b71-8d70-d3c4558b9521">
-							<property name="com.jaspersoft.studio.unit.width" value="px"/>
-						</reportElement>
-						<box>
-							<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-							<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-							<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-							<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-						</box>
-						<textElement textAlignment="Center" verticalAlignment="Middle">
-							<font size="8" isBold="true"/>
-						</textElement>
-						<text><![CDATA[KIT #]]></text>
-					</staticText>
-					<staticText>
-						<reportElement x="58" y="0" width="60" height="15" uuid="90ff8381-af3a-432e-bb5c-5addfc4926d7"/>
+						<reportElement x="16" y="0" width="60" height="15" uuid="90ff8381-af3a-432e-bb5c-5addfc4926d7"/>
 						<box>
 							<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 							<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -724,7 +707,7 @@
 						<text><![CDATA[DATE OF TEST]]></text>
 					</staticText>
 					<staticText>
-						<reportElement x="120" y="0" width="60" height="15" uuid="5776e952-d9f1-4ba9-b4f4-5c2fd4b8f61e"/>
+						<reportElement x="78" y="0" width="60" height="15" uuid="5776e952-d9f1-4ba9-b4f4-5c2fd4b8f61e"/>
 						<box>
 							<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 							<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -738,26 +721,11 @@
 					</staticText>
 				</frame>
 				<frame>
-					<reportElement x="185" y="0" width="183" height="15" uuid="ceb767a0-aeaa-4ee3-9658-303d7a5d36b1">
+					<reportElement x="197" y="0" width="139" height="15" uuid="ceb767a0-aeaa-4ee3-9658-303d7a5d36b1">
 						<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					</reportElement>
 					<staticText>
-						<reportElement x="0" y="0" width="55" height="15" uuid="b36384d2-b74f-4b27-937e-f67a6bf1eb07">
-							<property name="com.jaspersoft.studio.unit.width" value="px"/>
-						</reportElement>
-						<box>
-							<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-							<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-							<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-							<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-						</box>
-						<textElement textAlignment="Center" verticalAlignment="Middle">
-							<font size="8" isBold="true"/>
-						</textElement>
-						<text><![CDATA[KIT #]]></text>
-					</staticText>
-					<staticText>
-						<reportElement x="58" y="0" width="60" height="15" uuid="f77ea723-396a-49f8-bbd4-8f985bbee4ed"/>
+						<reportElement x="13" y="0" width="60" height="15" uuid="f77ea723-396a-49f8-bbd4-8f985bbee4ed"/>
 						<box>
 							<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 							<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -770,7 +738,7 @@
 						<text><![CDATA[DATE OF TEST]]></text>
 					</staticText>
 					<staticText>
-						<reportElement x="120" y="0" width="60" height="15" uuid="3edd6d38-4c25-46d2-9405-bc43a8eb09f8"/>
+						<reportElement x="79" y="0" width="60" height="15" uuid="3edd6d38-4c25-46d2-9405-bc43a8eb09f8"/>
 						<box>
 							<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 							<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -784,26 +752,11 @@
 					</staticText>
 				</frame>
 				<frame>
-					<reportElement x="372" y="0" width="183" height="15" uuid="0855eabc-8165-42f3-9251-9e0844422026">
+					<reportElement x="381" y="0" width="151" height="15" uuid="0855eabc-8165-42f3-9251-9e0844422026">
 						<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					</reportElement>
 					<staticText>
-						<reportElement x="0" y="0" width="55" height="15" uuid="7ccd873f-431b-4795-abf2-e430487b9e9f">
-							<property name="com.jaspersoft.studio.unit.width" value="px"/>
-						</reportElement>
-						<box>
-							<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-							<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-							<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-							<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-						</box>
-						<textElement textAlignment="Center" verticalAlignment="Middle">
-							<font size="8" isBold="true"/>
-						</textElement>
-						<text><![CDATA[KIT #]]></text>
-					</staticText>
-					<staticText>
-						<reportElement x="58" y="0" width="60" height="15" uuid="cec2d10f-c514-4387-95ae-7786284f149c"/>
+						<reportElement x="14" y="0" width="60" height="15" uuid="cec2d10f-c514-4387-95ae-7786284f149c"/>
 						<box>
 							<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 							<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -816,7 +769,7 @@
 						<text><![CDATA[DATE OF TEST]]></text>
 					</staticText>
 					<staticText>
-						<reportElement x="120" y="0" width="60" height="15" uuid="bdb0a7b6-17b5-4ba0-880c-97a916d2994a"/>
+						<reportElement x="77" y="0" width="60" height="15" uuid="bdb0a7b6-17b5-4ba0-880c-97a916d2994a"/>
 						<box>
 							<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 							<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -836,7 +789,7 @@
 		<band height="11" splitType="Immediate">
 			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 			<componentElement>
-				<reportElement positionType="Float" x="0" y="0" width="180" height="11" isPrintWhenDetailOverflows="true" uuid="8a3f331b-29ee-4eff-a901-1739f4d4d4d6">
+				<reportElement positionType="Float" x="23" y="0" width="130" height="11" isPrintWhenDetailOverflows="true" uuid="8a3f331b-29ee-4eff-a901-1739f4d4d4d6">
 					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
 					<property name="com.jaspersoft.studio.table.style.table_header" value="Table_TH"/>
 					<property name="com.jaspersoft.studio.table.style.column_header" value="Table_CH"/>
@@ -847,12 +800,12 @@
 					<datasetRun subDataset="kitUsageDataSet" uuid="26a88c07-5212-4be8-9c12-9799dfa22ed2">
 						<dataSourceExpression><![CDATA[$P{kitUsage}]]></dataSourceExpression>
 					</datasetRun>
-					<jr:columnGroup width="180" uuid="c98af99a-f577-44c6-bad3-b02a71d5ef30">
-						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Columns [3]"/>
-						<jr:column width="65" uuid="be2706f9-2193-4048-b7da-0652ad6d8af3">
+					<jr:columnGroup width="130" uuid="c98af99a-f577-44c6-bad3-b02a71d5ef30">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Columns [2]"/>
+						<jr:column width="65" uuid="12250bb3-d51b-411a-b1a3-43c1e036970a">
 							<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column1"/>
 							<jr:detailCell height="14">
-								<property name="com.jaspersoft.studio.unit.height" value="px"/>
+								<property name="com.jaspersoft.studio.unit.width" value="px"/>
 								<box>
 									<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 									<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -860,7 +813,7 @@
 									<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 								</box>
 								<textField textAdjust="StretchHeight">
-									<reportElement stretchType="ContainerBottom" x="0" y="0" width="65" height="14" isPrintWhenDetailOverflows="true" uuid="188665cf-7f2d-4eaa-a99b-2ea0924876d7">
+									<reportElement stretchType="ContainerBottom" x="0" y="0" width="65" height="14" isPrintWhenDetailOverflows="true" uuid="4f4bc6b6-d731-42e9-8986-5879f8bb4e07">
 										<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
 										<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
 									</reportElement>
@@ -874,13 +827,14 @@
 										<font size="8"/>
 										<paragraph leftIndent="5" rightIndent="5"/>
 									</textElement>
-									<textFieldExpression><![CDATA[$F{kitNumber}]]></textFieldExpression>
+									<textFieldExpression><![CDATA[$F{testDate}]]></textFieldExpression>
 								</textField>
 							</jr:detailCell>
 						</jr:column>
-						<jr:column width="55" uuid="12250bb3-d51b-411a-b1a3-43c1e036970a">
+						<jr:column width="65" uuid="610ab4d0-c3fc-46c9-84e4-e9cf14f9c871">
 							<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column2"/>
 							<jr:detailCell height="14">
+								<property name="com.jaspersoft.studio.unit.width" value="px"/>
 								<box>
 									<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 									<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -888,7 +842,7 @@
 									<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 								</box>
 								<textField textAdjust="StretchHeight">
-									<reportElement stretchType="ContainerBottom" x="0" y="0" width="55" height="14" isPrintWhenDetailOverflows="true" uuid="4f4bc6b6-d731-42e9-8986-5879f8bb4e07">
+									<reportElement stretchType="ContainerBottom" x="0" y="0" width="65" height="14" isPrintWhenDetailOverflows="true" uuid="a59c8d1f-2333-4fc2-be6a-11ce4dd0440e">
 										<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
 										<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
 									</reportElement>
@@ -902,35 +856,7 @@
 										<font size="8"/>
 										<paragraph leftIndent="5" rightIndent="5"/>
 									</textElement>
-									<textFieldExpression><![CDATA[$F{dateOfTest}]]></textFieldExpression>
-								</textField>
-							</jr:detailCell>
-						</jr:column>
-						<jr:column width="60" uuid="610ab4d0-c3fc-46c9-84e4-e9cf14f9c871">
-							<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column3"/>
-							<jr:detailCell height="14">
-								<box>
-									<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-									<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-									<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-									<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-								</box>
-								<textField textAdjust="StretchHeight">
-									<reportElement stretchType="ContainerBottom" x="0" y="0" width="60" height="14" isPrintWhenDetailOverflows="true" uuid="a59c8d1f-2333-4fc2-be6a-11ce4dd0440e">
-										<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
-										<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
-									</reportElement>
-									<box>
-										<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-										<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-										<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-										<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-									</box>
-									<textElement textAlignment="Center" verticalAlignment="Middle">
-										<font size="8"/>
-										<paragraph leftIndent="5" rightIndent="5"/>
-									</textElement>
-									<textFieldExpression><![CDATA[$F{result}]]></textFieldExpression>
+									<textFieldExpression><![CDATA[$F{testResult}]]></textFieldExpression>
 								</textField>
 							</jr:detailCell>
 						</jr:column>
